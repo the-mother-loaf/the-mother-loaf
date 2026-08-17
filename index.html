@@ -1,201 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Mother Loaf | Small-Batch Sourdough</title>
-  <meta name="description" content="The Mother Loaf - small-batch sourdough in Austin. Saturday pickup from 10 AM to 12 PM.">
-  <style>
-    :root {
-      --cream: #f8f1e5;
-      --warm: #efe1cc;
-      --brown: #5d4030;
-      --dark: #3f2b20;
-      --gold: #b98952;
-      --white: #fffdf9;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: var(--cream);
-      color: var(--dark);
-      line-height: 1.6;
-    }
-    .hero {
-      min-height: 78vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 22px;
-      background:
-        radial-gradient(circle at top, rgba(255,255,255,.75), transparent 55%),
-        var(--warm);
-    }
-    .hero-inner { max-width: 760px; }
-    .eyebrow {
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 13px;
-      margin-bottom: 18px;
-      color: var(--gold);
-      font-weight: bold;
-    }
-    h1 {
-      font-size: clamp(54px, 12vw, 105px);
-      line-height: .9;
-      margin: 0;
-      color: var(--brown);
-      font-weight: 700;
-    }
-    .tagline {
-      font-size: clamp(19px, 3vw, 26px);
-      margin: 28px 0 12px;
-    }
-    .pickup {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 13px 22px;
-      border: 1px solid var(--gold);
-      border-radius: 30px;
-      background: rgba(255,255,255,.55);
-      font-weight: bold;
-    }
-    section { padding: 68px 22px; }
-    .container { max-width: 900px; margin: auto; }
-    h2 {
-      text-align: center;
-      color: var(--brown);
-      font-size: 38px;
-      margin: 0 0 35px;
-    }
-    .menu {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-    }
-    .item {
-      background: var(--white);
-      border-radius: 18px;
-      padding: 25px;
-      box-shadow: 0 5px 18px rgba(63,43,32,.08);
-      text-align: center;
-    }
-    .item h3 { margin: 0 0 7px; font-size: 23px; color: var(--brown); }
-    .price { font-size: 23px; font-weight: bold; color: var(--gold); }
-    .info {
-      background: var(--white);
-      border-radius: 22px;
-      padding: 32px;
-      max-width: 700px;
-      margin: auto;
-      text-align: center;
-      box-shadow: 0 5px 18px rgba(63,43,32,.07);
-    }
-    .steps {
-      display: grid;
-      gap: 15px;
-      text-align: left;
-      max-width: 600px;
-      margin: auto;
-    }
-    .step {
-      padding: 16px 18px;
-      background: var(--cream);
-      border-radius: 12px;
-    }
-    .step strong { color: var(--brown); }
-    footer {
-      text-align: center;
-      padding: 35px 20px;
-      background: var(--brown);
-      color: var(--cream);
-      font-size: 14px;
-    }
-    .note { font-size: 14px; opacity: .8; margin-top: 18px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Mother Loaf | Small-Batch Sourdough</title>
+
+<meta
+name="description"
+content="The Mother Loaf - small-batch sourdough in Austin. Saturday pickup from 10 AM to 12 PM."
+>
+
+<style>
+:root {
+--cream: #f8f1e5;
+--warm: #efe1cc;
+--brown: #5d4030;
+--dark: #3f2b20;
+--gold: #b98952;
+--white: #fffdf9;
+}
+
+* {
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+font-family: Georgia, "Times New Roman", serif;
+background: var(--cream);
+color: var(--dark);
+line-height: 1.6;
+}
+
+.hero {
+min-height: 78vh;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 60px 22px;
+
+background:
+radial-gradient(
+circle at top,
+rgba(255,255,255,.75),
+transparent 55%
+),
+var(--warm);
+}
+
+.hero-inner {
+max-width: 760px;
+}
+
+.eyebrow {
+letter-spacing: 4px;
+text-transform: uppercase;
+font-size: 13px;
+margin-bottom: 18px;
+color: var(--gold);
+font-weight: bold;
+}
+
+h1 {
+font-size: clamp(54px, 12vw, 105px);
+line-height: .9;
+margin: 0;
+color: var(--brown);
+font-weight: 700;
+}
+
+.tagline {
+font-size: clamp(19px, 3vw, 26px);
+margin: 28px 0 12px;
+}
+
+.pickup {
+display: inline-block;
+margin-top: 18px;
+padding: 13px 22px;
+border: 1px solid var(--gold);
+border-radius: 30px;
+background: rgba(255,255,255,.55);
+font-weight: bold;
+}
+
+section {
+padding: 68px 22px;
+}
+
+.container {
+max-width: 900px;
+margin: auto;
+}
+
+h2 {
+text-align: center;
+color: var(--brown);
+font-size: 38px;
+margin: 0 0 35px;
+}
+
+.menu {
+display: grid;
+grid-template-columns: repeat(
+auto-fit,
+minmax(230px, 1fr)
+);
+gap: 18px;
+}
+
+.item {
+background: var(--white);
+border-radius: 18px;
+padding: 25px;
+box-shadow: 0 5px 18px rgba(63,43,32,.08);
+text-align: center;
+}
+
+.item h3 {
+margin: 0 0 7px;
+font-size: 23px;
+color: var(--brown);
+}
+
+.price {
+font-size: 23px;
+font-weight: bold;
+color: var(--gold);
+}
+
+.info {
+background: var(--white);
+border-radius: 22px;
+padding: 32px;
+max-width: 700px;
+margin: auto;
+text-align: center;
+box-shadow: 0 5px 18px rgba(63,43,32,.07);
+}
+
+.steps {
+display: grid;
+gap: 15px;
+text-align: left;
+max-width: 600px;
+margin: auto;
+}
+
+.step {
+padding: 16px 18px;
+background: var(--cream);
+border-radius: 12px;
+}
+
+.step strong {
+color: var(--brown);
+}
+
+/* Google Form */
+
+.form-container {
+max-width: 760px;
+margin: auto;
+background: var(--white);
+border-radius: 22px;
+padding: 15px;
+box-shadow: 0 5px 18px rgba(63,43,32,.07);
+overflow: hidden;
+}
+
+.form-container iframe {
+width: 100%;
+min-height: 1700px;
+border: none;
+display: block;
+}
+
+.note {
+font-size: 14px;
+opacity: .8;
+margin-top: 18px;
+}
+
+footer {
+text-align: center;
+padding: 35px 20px;
+background: var(--brown);
+color: var(--cream);
+font-size: 14px;
+}
+
+@media (max-width: 600px) {
+
+section {
+padding: 50px 16px;
+}
+
+h2 {
+font-size: 32px;
+}
+
+.info {
+padding: 24px 18px;
+}
+
+.form-container {
+padding: 8px;
+border-radius: 16px;
+}
+
+.form-container iframe {
+min-height: 1750px;
+}
+}
+</style>
 </head>
+
 <body>
 
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">Small-Batch Sourdough • Austin, Texas</div>
-      <h1>The<br>Mother Loaf</h1>
-      <p class="tagline">Handmade sourdough, baked in small batches.</p>
-      <div class="pickup">Saturday Pickup • 10:00 AM – 12:00 PM</div>
-    </div>
-  </header>
+<!-- HERO -->
 
-  <section>
-    <div class="container">
-      <h2>This Week's Menu</h2>
-      <div class="menu">
-        <div class="item">
-          <h3>Classic Sourdough</h3>
-          <div class="price">$12</div>
-        </div>
-        <div class="item">
-          <h3>Cinnamon Sugar Loaf</h3>
-          <div class="price">$15</div>
-        </div>
-        <div class="item">
-          <h3>Garlic Parmesan Loaf</h3>
-          <div class="price">$15</div>
-        </div>
-    
-      </div>
-    </div>
-  </section>
+<header class="hero">
+<div class="hero-inner">
 
-  <section>
-    <div class="container">
-      <h2>How to Order</h2>
-      <div class="info">
-        <div class="steps">
-          <div class="step"><strong>1.</strong> Choose your sourdough favorites from the menu.</div>
-          <div class="step"><strong>2.</strong> Pay for your order with <strong>Venmo @Stephanie-Mead-11</strong> or <strong>Apple Cash at 512-750-3719</strong>.</div>
-          <div class="step"><strong>3.</strong> Pick up your order Saturday between <strong>10:00 AM and 12:00 PM</strong>.</div>
-        </div>
-        <p class="note"><strong>Payment:</strong> Venmo <strong>@Stephanie-Mead-11</strong> or Apple Cash <strong>512-750-3719</strong>.</p>
-      </div>
-    </div>
-  </section>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfzbXqETLVrJdHvWzw9NJIUpiI27GNOAJPHC4jayP-Wvy9Bhg/viewform?embedded=true" width="640" height="1688" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<div class="eyebrow">
+Small-Batch Sourdough • Austin, Texas
+</div>
 
-  <section>
-    <div class="container">
-      <h2>Pay for Your Order</h2>
-      <div class="info">
-        <p><strong>Venmo:</strong> @Stephanie-Mead-11</p>
-        <p><strong>Apple Cash:</strong> 512-750-3719</p>
-        <p class="note">Please include your name and order details with your payment.</p>
-      </div>
-    </div>
-  </section>
+<h1>
+The<br>Mother Loaf
+</h1>
 
-  <section>
-    <div class="container">
-      <h2>Pickup</h2>
-      <div class="info">
-        <p><strong>Saturday • 10:00 AM – 12:00 PM</strong></p>
-        <p>Local pickup in the Hunters Chase area of Austin.</p>
-      </div>
-    </div>
-  </section>
+<p class="tagline">
+Handmade sourdough, baked in small batches.
+</p>
 
-  <section>
-    <div class="container">
-      <h2>About The Mother Loaf</h2>
-      <div class="info">
-        <p>The Mother Loaf is a small-batch sourdough bake made for neighbors who appreciate a good loaf, a little butter, and the smell of bread coming out of the oven.</p>
-      </div>
-    </div>
-  </section>
+<div class="pickup">
+Saturday Pickup • 10:00 AM – 12:00 PM
+</div>
 
-  <footer>
-    © 2026 The Mother Loaf • Austin, Texas
-  </footer>
+</div>
+</header>
+
+
+<!-- MENU -->
+
+<section>
+<div class="container">
+
+<h2>This Week's Menu</h2>
+
+<div class="menu">
+
+<div class="item">
+<h3>Classic Sourdough</h3>
+<div class="price">$12</div>
+</div>
+
+<div class="item">
+<h3>Cinnamon Sugar Loaf</h3>
+<div class="price">$15</div>
+</div>
+
+<div class="item">
+<h3>Garlic Parmesan Loaf</h3>
+<div class="price">$15</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- HOW TO ORDER -->
+
+<section>
+<div class="container">
+
+<h2>How to Order</h2>
+
+<div class="info">
+
+<div class="steps">
+
+<div class="step">
+<strong>1.</strong>
+Choose your sourdough favorites from the menu.
+</div>
+
+<div class="step">
+<strong>2.</strong>
+Fill out the order form below and submit your order.
+</div>
+
+<div class="step">
+<strong>3.</strong>
+Pay with Venmo
+<strong>@Stephanie-Mead-11</strong>
+or Apple Cash
+<strong>512-750-3719</strong>.
+</div>
+
+<div class="step">
+<strong>4.</strong>
+Pick up your order Saturday between
+<strong>10:00 AM and 12:00 PM</strong>.
+</div>
+
+</div>
+
+<p class="note">
+Please include your name and order details with your payment.
+</p>
+
+</div>
+</div>
+</section>
+
+
+<!-- ORDER FORM -->
+
+<section id="order">
+
+<div class="container">
+
+<h2>Place Your Order</h2>
+
+<div class="form-container">
+
+<iframe
+src="https://docs.google.com/forms/d/e/1FAIpQLSfzbXqETLVrJdHvWzw9NJIUpiI27GNOAJPHC4jayP-Wvy9Bhg/viewform?embedded=true"
+frameborder="0"
+marginheight="0"
+marginwidth="0">
+Loading…
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PAYMENT -->
+
+<section>
+
+<div class="container">
+
+<h2>Pay for Your Order</h2>
+
+<div class="info">
+
+<p>
+<strong>Venmo:</strong>
+@Stephanie-Mead-11
+</p>
+
+<p>
+<strong>Apple Cash:</strong>
+512-750-3719
+</p>
+
+<p class="note">
+Please include your name and order details with your payment.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PICKUP -->
+
+<section>
+
+<div class="container">
+
+<h2>Pickup</h2>
+
+<div class="info">
+
+<p>
+<strong>
+Saturday • 10:00 AM – 12:00 PM
+</strong>
+</p>
+
+<p>
+Local pickup in the Hunters Chase area of Austin.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section>
+
+<div class="container">
+
+<h2>About The Mother Loaf</h2>
+
+<div class="info">
+
+<p>
+The Mother Loaf is a small-batch sourdough bake made for
+neighbors who appreciate a good loaf, a little butter,
+and the smell of bread coming out of the oven.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 The Mother Loaf • Austin, Texas
+</footer>
+
 
 </body>
 </html>
